@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+
+{% block content %}
+<div class="container" style="margin: 50px;">
+  <div class="display-2">
+    <span class="badge bg-primary">Доска объявлений</span>
+  </div>
+</div>
+<div class="container">
+  <div class="col">
+    <div class="card mb-2" style="max-width: 1200px; margin-top: 20px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <a href="#" class="nav-link">
+            <img src="{% static adv_1.image_url %} " class="img-fluid rounded-start" alt="Card title">
+          </a>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="#" class="nav-link"><strong> {{ adv_1.title }}  </strong></a>
+            </h5>
+            <a href="#" class="nav-link">
+              <p class="card-text">
+                {{ adv_1.description }}
+              </p>
+                <p class="card-text"><small class="text-muted">Размещено: {{ adv_1.created_at }}</small></p>
+                <span>Цена: {{ adv_1.price }} </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="container">
+  <div class="col">
+    <div class="card mb-2" style="max-width: 1200px; margin-top: 20px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <a href="#" class="nav-link">
+            <img src="{{ adv_2.image_url }} " class="img-fluid rounded-start" alt="Card title">
+          </a>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="#" class="nav-link"><strong> {{ adv_2.title }}  </strong></a>
+            </h5>
+            <a href="#" class="nav-link">
+              <p class="card-text">
+                {{ adv_2.description }}
+              </p>
+                <p class="card-text"><small class="text-muted">Размещено: {{ adv_2.created_at }}</small></p>
+                <span>Цена: {{ adv_2.price }} </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

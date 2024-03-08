@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Решение задачи
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+
+    <form action="{% url 'task' %}" method="post">
+        {% csrf_token %}
+        <p>Даны вещественные числа x, y. Вычислить z. z = xy, если x > y, в противном случае: z = ln(x + y)</p>
+        {{form.as_p}}
+        <input type="submit" value="Получить ответ">
+    </form>
+</div>
+
+{% endblock %}

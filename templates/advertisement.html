@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Объявление
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container" style="margin: 50px;">
+  <div class="display-2">
+    <span class="badge bg-primary">Объявление пользователя {{ advertisement.user }}</span>
+  </div>
+</div>
+<div class="col offset-2">
+  <div class="card mb-2" style="max-width: 1200px; margin-top: 20px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <a href="#" class="nav-link">
+          <img src="{% if advertisement.image %} {{ advertisement.image.url }} {% else %} {% static 'img/123.png' %} {% endif %}" class="img-fluid rounded-start" alt="Card title">
+        </a>
+      </div>
+      <div class="col">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="#" class="nav-link"><strong>{{ advertisement.title }}</strong></a>
+          </h5>
+          <p class="card-text">
+            {{ advertisement.description }}
+          </p>
+          <span>Автор: {{ advertisement.user }}</span>
+          <p class="card-text"><small class="text-muted">Размещено: {{ advertisement.created_at }}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <a href="{% url 'main_page' %}">
+        <button type="submit" class="btn btn-success">На главную страницу</button>
+    </a>
+</div>
+{% endblock %}

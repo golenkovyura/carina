@@ -1,0 +1,39 @@
+<ul class="nav nav-pills sticky-top bg-white nav-fill">
+    <li class="nav-item">
+        <a
+                {% if 'main_page' in request.resolver_match.url_name %}
+                    class="nav-link active"
+                {% else %}
+                    class="nav-link"
+                {% endif %}
+        href="{% url 'main_page' %}"><span style="font-weight: bold;">Главная</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a 
+                {% if 'top_sellers' in request.resolver_match.url_name %}
+                    class="nav-link active"
+                {% else %}
+                    class="nav-link"
+                {% endif %}
+                href="{% url 'top_sellers' %}"><span
+                style="font-weight: bold;">Топ продавцов</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://www.youtube.com/" target="_blank">
+            <span style="font-weight: bold;">Сторонний ресурс</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a 
+                 {% if 'task' in request.resolver_match.url_name %}
+                    class="nav-link active"
+                {% else %}
+                    class="nav-link"
+                {% endif %}
+                href="{% url 'task' %}">
+            <span style="font-weight: bold;">Решение задачи</span>
+        </a>
+    </li>
+</ul>

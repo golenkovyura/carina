@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Ответ на задачу
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <h3>x = {{ x }}</h3> <h3>y = {{ y }}</h3>
+        <h3>z = {{ z }}</h3>
+        <a href="{% url 'main_page' %}">
+            <button type="submit" class="btn btn-success">На главную страницу</button>
+        </a>
+            <p></p>
+        <a href="{% url 'task' %}">
+            <button type="button" class="btn btn-info">Решить еще раз</button>
+        </a>
+    </div>
+</div>
+{% endblock %}
